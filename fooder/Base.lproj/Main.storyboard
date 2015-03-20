@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0w-sO-cBw" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGL-Zb-vxd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g8f-HV-Bhu">
+                                        <rect key="frame" x="74" y="211" width="267" height="30"/>
+                                        <color key="backgroundColor" white="0.28159652219999998" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="6CF-Yw-tiS"/>
+                                        </constraints>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="8Kv-pV-Asb"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where do you want to go today?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUe-ZV-Z0X">
+                                        <rect key="frame" x="69" y="168" width="277" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="OTX-0F-brh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="21"/>
+                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="fUe-ZV-Z0X" firstAttribute="centerX" secondItem="yGL-Zb-vxd" secondAttribute="centerX" id="31n-oO-sAs"/>
+                                    <constraint firstItem="fUe-ZV-Z0X" firstAttribute="top" secondItem="yGL-Zb-vxd" secondAttribute="centerY" constant="-200" id="4X9-IT-jsm"/>
+                                    <constraint firstItem="g8f-HV-Bhu" firstAttribute="leading" secondItem="yGL-Zb-vxd" secondAttribute="leading" constant="74" id="Nti-ID-PaB"/>
+                                    <constraint firstItem="fUe-ZV-Z0X" firstAttribute="centerX" secondItem="g8f-HV-Bhu" secondAttribute="centerX" id="W1t-QW-uvp"/>
+                                    <constraint firstItem="g8f-HV-Bhu" firstAttribute="top" secondItem="fUe-ZV-Z0X" secondAttribute="bottom" constant="8" symbolic="YES" id="aQC-la-R16"/>
+                                    <constraint firstItem="fUe-ZV-Z0X" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yGL-Zb-vxd" secondAttribute="top" constant="40" id="p9G-S6-YG3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h0w-sO-cBw" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="4ws-uy-QgW"/>
+                            <constraint firstItem="yGL-Zb-vxd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="HlV-Rh-GCV"/>
+                            <constraint firstItem="yGL-Zb-vxd" firstAttribute="leading" secondItem="h0w-sO-cBw" secondAttribute="leading" id="StU-gq-ndZ"/>
+                            <constraint firstItem="yGL-Zb-vxd" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="Stb-VU-hev"/>
+                            <constraint firstItem="yGL-Zb-vxd" firstAttribute="top" secondItem="h0w-sO-cBw" secondAttribute="top" id="d5I-19-ryk"/>
+                            <constraint firstItem="h0w-sO-cBw" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="eTg-Dp-bdw"/>
+                            <constraint firstAttribute="trailing" secondItem="yGL-Zb-vxd" secondAttribute="trailing" id="ggc-SI-NAn"/>
+                            <constraint firstItem="yGL-Zb-vxd" firstAttribute="trailing" secondItem="h0w-sO-cBw" secondAttribute="trailing" id="tbK-fr-UMn"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="destinationTextField" destination="g8f-HV-Bhu" id="e7E-0r-QII"/>
+                        <outlet property="mapView" destination="h0w-sO-cBw" id="kpC-NH-01i"/>
+                        <outlet property="overlayView" destination="yGL-Zb-vxd" id="iae-ZJ-aHX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="654" y="500"/>
+        </scene>
+    </scenes>
+</document>
