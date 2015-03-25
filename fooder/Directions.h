@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Route.h"
 
 @interface Directions : NSObject
 
-typedef void (^DirectionsCompletionBlock)(BOOL success, NSDictionary *response, NSError *error);
+typedef void (^DirectionsCompletionBlock)(BOOL success, Route *route, NSError *error);
 
 + (void)directionsForOrigin:(NSString*)origin destination:(NSString*)destination completionHandler:(DirectionsCompletionBlock)completionHandler;
 

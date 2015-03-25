@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D60FDF01AC23AA400725EA8 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D60FDEF1AC23AA400725EA8 /* Route.m */; };
+		3D60FDF31AC23CE000725EA8 /* Candidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D60FDF21AC23CE000725EA8 /* Candidate.m */; };
+		3D60FDF61AC2400F00725EA8 /* CandidatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D60FDF51AC2400F00725EA8 /* CandidatesTableViewController.m */; };
 		3DC646521ABBBF2F0091AA12 /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC646511ABBBF2F0091AA12 /* burger.png */; };
 		3DC646541ABBBF7A0091AA12 /* burger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC646531ABBBF7A0091AA12 /* burger@2x.png */; };
 		3DFFEB401ABA53B100F601D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFEB3F1ABA53B100F601D3 /* main.m */; };
 		3DFFEB431ABA53B100F601D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFEB421ABA53B100F601D3 /* AppDelegate.m */; };
-		3DFFEB461ABA53B100F601D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFEB451ABA53B100F601D3 /* ViewController.m */; };
+		3DFFEB461ABA53B100F601D3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFEB451ABA53B100F601D3 /* MainViewController.m */; };
 		3DFFEB491ABA53B100F601D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DFFEB471ABA53B100F601D3 /* Main.storyboard */; };
 		3DFFEB4B1ABA53B100F601D3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DFFEB4A1ABA53B100F601D3 /* Images.xcassets */; };
 		3DFFEB4E1ABA53B100F601D3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DFFEB4C1ABA53B100F601D3 /* LaunchScreen.xib */; };
@@ -45,6 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D60FDEE1AC23AA400725EA8 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Route.h; path = Models/Route.h; sourceTree = "<group>"; };
+		3D60FDEF1AC23AA400725EA8 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Route.m; path = Models/Route.m; sourceTree = "<group>"; };
+		3D60FDF11AC23CE000725EA8 /* Candidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Candidate.h; path = Models/Candidate.h; sourceTree = "<group>"; };
+		3D60FDF21AC23CE000725EA8 /* Candidate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Candidate.m; path = Models/Candidate.m; sourceTree = "<group>"; };
+		3D60FDF41AC2400F00725EA8 /* CandidatesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandidatesTableViewController.h; sourceTree = "<group>"; };
+		3D60FDF51AC2400F00725EA8 /* CandidatesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandidatesTableViewController.m; sourceTree = "<group>"; };
 		3DC646511ABBBF2F0091AA12 /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burger.png; sourceTree = "<group>"; };
 		3DC646531ABBBF7A0091AA12 /* burger@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "burger@2x.png"; sourceTree = "<group>"; };
 		3DFFEB3A1ABA53B100F601D3 /* fooder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fooder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,8 +61,8 @@
 		3DFFEB3F1ABA53B100F601D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3DFFEB411ABA53B100F601D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3DFFEB421ABA53B100F601D3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3DFFEB441ABA53B100F601D3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3DFFEB451ABA53B100F601D3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3DFFEB441ABA53B100F601D3 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		3DFFEB451ABA53B100F601D3 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		3DFFEB481ABA53B100F601D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DFFEB4A1ABA53B100F601D3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3DFFEB4D1ABA53B100F601D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -110,6 +119,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D60FDED1AC23A7300725EA8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3D60FDEE1AC23AA400725EA8 /* Route.h */,
+				3D60FDEF1AC23AA400725EA8 /* Route.m */,
+				3D60FDF11AC23CE000725EA8 /* Candidate.h */,
+				3D60FDF21AC23CE000725EA8 /* Candidate.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		3DFFEB311ABA53B100F601D3 = {
 			isa = PBXGroup;
 			children = (
@@ -145,12 +165,15 @@
 		3DFFEB3C1ABA53B100F601D3 /* fooder */ = {
 			isa = PBXGroup;
 			children = (
+				3D60FDED1AC23A7300725EA8 /* Models */,
 				3DC646511ABBBF2F0091AA12 /* burger.png */,
 				3DC646531ABBBF7A0091AA12 /* burger@2x.png */,
 				3DFFEB411ABA53B100F601D3 /* AppDelegate.h */,
 				3DFFEB421ABA53B100F601D3 /* AppDelegate.m */,
-				3DFFEB441ABA53B100F601D3 /* ViewController.h */,
-				3DFFEB451ABA53B100F601D3 /* ViewController.m */,
+				3DFFEB441ABA53B100F601D3 /* MainViewController.h */,
+				3DFFEB451ABA53B100F601D3 /* MainViewController.m */,
+				3D60FDF41AC2400F00725EA8 /* CandidatesTableViewController.h */,
+				3D60FDF51AC2400F00725EA8 /* CandidatesTableViewController.m */,
 				3DFFEB471ABA53B100F601D3 /* Main.storyboard */,
 				3DFFEB4A1ABA53B100F601D3 /* Images.xcassets */,
 				3DFFEB4C1ABA53B100F601D3 /* LaunchScreen.xib */,
@@ -292,10 +315,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DFFEB461ABA53B100F601D3 /* ViewController.m in Sources */,
+				3D60FDF01AC23AA400725EA8 /* Route.m in Sources */,
+				3DFFEB461ABA53B100F601D3 /* MainViewController.m in Sources */,
+				3D60FDF61AC2400F00725EA8 /* CandidatesTableViewController.m in Sources */,
 				3DFFEB431ABA53B100F601D3 /* AppDelegate.m in Sources */,
 				3DFFEB401ABA53B100F601D3 /* main.m in Sources */,
 				3DFFEB871ABA5D4700F601D3 /* Directions.m in Sources */,
+				3D60FDF31AC23CE000725EA8 /* Candidate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

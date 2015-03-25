@@ -22,7 +22,7 @@
         if (error == nil) {
             NSError *error;
             NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-            completionHandler(true, response, error);
+            completionHandler(true, [[Route alloc] initWithDictionary:response], error);
         } else {
             completionHandler(false, nil, error);
         }
