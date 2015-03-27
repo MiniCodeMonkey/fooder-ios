@@ -3,7 +3,7 @@
 //  fooder
 //
 //  Created by Mathias Hansen on 3/18/15.
-//  Copyright (c) 2015 engage. All rights reserved.
+//  Copyright (c) 2015 Mathias Hansen. All rights reserved.
 //
 
 #import "Directions.h"
@@ -11,7 +11,7 @@
 @implementation Directions
 
 + (void)directionsForOrigin:(NSString*)origin destination:(NSString*)destination completionHandler:(DirectionsCompletionBlock)completionHandler {
-    NSString *url = [NSString stringWithFormat:@"http://fooder.local/route?origin=%@&destination=%@", [origin stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [destination stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSString *url = [NSString stringWithFormat:@"https://fooder.dotsqua.re/route?origin=%@&destination=%@", [origin stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [destination stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSLog(@"%@", url);
     
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D59C8E11AC4E6EA001591DA /* ProductsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D59C8E01AC4E6EA001591DA /* ProductsTableViewController.m */; };
 		3D60FDF01AC23AA400725EA8 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D60FDEF1AC23AA400725EA8 /* Route.m */; };
 		3D60FDF31AC23CE000725EA8 /* Candidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D60FDF21AC23CE000725EA8 /* Candidate.m */; };
 		3D60FDF61AC2400F00725EA8 /* CandidatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D60FDF51AC2400F00725EA8 /* CandidatesTableViewController.m */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D59C8DF1AC4E6EA001591DA /* ProductsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsTableViewController.h; sourceTree = "<group>"; };
+		3D59C8E01AC4E6EA001591DA /* ProductsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsTableViewController.m; sourceTree = "<group>"; };
 		3D60FDEE1AC23AA400725EA8 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Route.h; path = Models/Route.h; sourceTree = "<group>"; };
 		3D60FDEF1AC23AA400725EA8 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Route.m; path = Models/Route.m; sourceTree = "<group>"; };
 		3D60FDF11AC23CE000725EA8 /* Candidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Candidate.h; path = Models/Candidate.h; sourceTree = "<group>"; };
@@ -148,7 +151,6 @@
 				3DFFEB671ABA54DE00F601D3 /* GoogleMaps.bundle */,
 				3DFFEB631ABA546B00F601D3 /* GoogleMaps.framework */,
 				3DFFEB3C1ABA53B100F601D3 /* fooder */,
-				3DFFEB561ABA53B100F601D3 /* fooderTests */,
 				3DFFEB3B1ABA53B100F601D3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -177,9 +179,12 @@
 				3DFFEB471ABA53B100F601D3 /* Main.storyboard */,
 				3DFFEB4A1ABA53B100F601D3 /* Images.xcassets */,
 				3DFFEB4C1ABA53B100F601D3 /* LaunchScreen.xib */,
+				3DFFEB561ABA53B100F601D3 /* fooderTests */,
 				3DFFEB3D1ABA53B100F601D3 /* Supporting Files */,
 				3DFFEB851ABA5D4700F601D3 /* Directions.h */,
 				3DFFEB861ABA5D4700F601D3 /* Directions.m */,
+				3D59C8DF1AC4E6EA001591DA /* ProductsTableViewController.h */,
+				3D59C8E01AC4E6EA001591DA /* ProductsTableViewController.m */,
 			);
 			path = fooder;
 			sourceTree = "<group>";
@@ -201,7 +206,7 @@
 				3DFFEB571ABA53B100F601D3 /* Supporting Files */,
 			);
 			path = fooderTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		3DFFEB571ABA53B100F601D3 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -256,10 +261,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = engage;
+				ORGANIZATIONNAME = "Mathias Hansen";
 				TargetAttributes = {
 					3DFFEB391ABA53B100F601D3 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = QW7NVJAP4K;
 					};
 					3DFFEB521ABA53B100F601D3 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -318,6 +324,7 @@
 				3D60FDF01AC23AA400725EA8 /* Route.m in Sources */,
 				3DFFEB461ABA53B100F601D3 /* MainViewController.m in Sources */,
 				3D60FDF61AC2400F00725EA8 /* CandidatesTableViewController.m in Sources */,
+				3D59C8E11AC4E6EA001591DA /* ProductsTableViewController.m in Sources */,
 				3DFFEB431ABA53B100F601D3 /* AppDelegate.m in Sources */,
 				3DFFEB401ABA53B100F601D3 /* main.m in Sources */,
 				3DFFEB871ABA5D4700F601D3 /* Directions.m in Sources */,
@@ -445,6 +452,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -452,6 +461,7 @@
 				INFOPLIST_FILE = fooder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -459,6 +469,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -466,6 +478,7 @@
 				INFOPLIST_FILE = fooder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

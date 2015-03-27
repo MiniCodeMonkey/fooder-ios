@@ -100,5 +100,134 @@
             </objects>
             <point key="canvasLocation" x="654" y="500"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xER-vZ-8fA">
+            <objects>
+                <navigationController storyboardIdentifier="DirectionsNavigationController" id="YoQ-cc-yRQ" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MU1-lc-An9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="TDw-bE-wHX" kind="relationship" relationship="rootViewController" id="Hil-f7-jie"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f84-w8-Ra0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="654" y="1403"/>
+        </scene>
+        <!--What do you feel like eating?-->
+        <scene sceneID="9P9-cO-O3v">
+            <objects>
+                <viewController id="TDw-bE-wHX" customClass="CandidatesTableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OAz-rW-6YQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="rbz-W8-i0v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MC9-xi-Tez">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUR-hu-wli" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="414" height="336"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="drk-2M-4Gx">
+                                <rect key="frame" x="0.0" y="400" width="414" height="336"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CandidateCell" textLabel="lmZ-Pv-Fet" detailTextLabel="dwt-xB-OUw" style="IBUITableViewCellStyleValue1" id="m9i-xq-PhI">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m9i-xq-PhI" id="YTD-DD-Tw5">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lmZ-Pv-Fet">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dwt-xB-OUw">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="bY5-A4-bZE" kind="show" id="38X-l7-WXA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="eUR-hu-wli" secondAttribute="bottom" constant="336" id="8X6-4u-KdC"/>
+                            <constraint firstItem="drk-2M-4Gx" firstAttribute="trailing" secondItem="eUR-hu-wli" secondAttribute="trailing" id="HL5-Zm-w4H"/>
+                            <constraint firstItem="eUR-hu-wli" firstAttribute="leading" secondItem="MC9-xi-Tez" secondAttribute="leading" id="NXx-eH-rch"/>
+                            <constraint firstItem="drk-2M-4Gx" firstAttribute="top" secondItem="eUR-hu-wli" secondAttribute="bottom" id="NyL-b7-LXA"/>
+                            <constraint firstItem="eUR-hu-wli" firstAttribute="top" secondItem="OAz-rW-6YQ" secondAttribute="bottom" id="cuV-vX-rqT"/>
+                            <constraint firstAttribute="trailing" secondItem="eUR-hu-wli" secondAttribute="trailing" id="pCw-Uq-t8D"/>
+                            <constraint firstItem="drk-2M-4Gx" firstAttribute="leading" secondItem="eUR-hu-wli" secondAttribute="leading" id="r6m-Gp-Cpj"/>
+                            <constraint firstItem="drk-2M-4Gx" firstAttribute="bottom" secondItem="rbz-W8-i0v" secondAttribute="top" id="x8b-dO-Smz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="What do you feel like eating?" id="N6m-KU-7nO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="mapView" destination="eUR-hu-wli" id="O3k-CV-dt0"/>
+                        <outlet property="tableView" destination="drk-2M-4Gx" id="Fx0-M1-PLP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mIx-P5-qEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1299" y="1403"/>
+        </scene>
+        <!--How do you want to get there?-->
+        <scene sceneID="u85-hr-5Bx">
+            <objects>
+                <tableViewController id="bY5-A4-bZE" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sit-0G-MGj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProductCell" textLabel="cAO-8p-WPW" detailTextLabel="rTE-jc-fd4" style="IBUITableViewCellStyleValue1" id="KaT-Ng-LgA">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KaT-Ng-LgA" id="bTK-6H-fEU">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cAO-8p-WPW">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rTE-jc-fd4">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bY5-A4-bZE" id="Oxv-36-FMJ"/>
+                            <outlet property="delegate" destination="bY5-A4-bZE" id="d85-bo-TZ4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="How do you want to get there?" id="wK2-Nn-Qcd"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kb6-Pi-CP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1942" y="1403"/>
+        </scene>
     </scenes>
 </document>

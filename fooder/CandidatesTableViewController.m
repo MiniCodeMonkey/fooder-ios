@@ -3,7 +3,7 @@
 //  fooder
 //
 //  Created by Mathias Hansen on 3/24/15.
-//  Copyright (c) 2015 engage. All rights reserved.
+//  Copyright (c) 2015 Mathias Hansen. All rights reserved.
 //
 
 #import "CandidatesTableViewController.h"
@@ -15,14 +15,60 @@
 
 @implementation CandidatesTableViewController
 
+@synthesize route;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // Configure table view
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // Keep track of the bounds
+    GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] init];
+    
+    // Draw route
+    for (NSArray *step in route.route) {
+        GMSMutablePath *path = [GMSMutablePath path];
+        for (NSArray *point in step) {
+            [path addCoordinate:CLLocationCoordinate2DMake([[point objectAtIndex:0] doubleValue], [[point objectAtIndex:1] doubleValue])];
+        }
+        GMSPolyline *polyline = [GMSPolyline polylineWithPath:path];
+        polyline.strokeWidth = 3.0f;
+        polyline.strokeColor = [UIColor blackColor];
+        polyline.map = self.mapView;
+        
+        bounds = [bounds includingPath:path];
+    }
+    
+    // Draw candidates
+    for (Candidate *candidate in route.candidates) {
+        GMSMarker *marker = [[GMSMarker alloc] init];
+        marker.position = candidate.location;
+        marker.icon = [UIImage imageNamed:@"burger.png"];
+        marker.title = candidate.name;
+        marker.snippet = candidate.distance;
+        marker.map = self.mapView;
+    }
+    
+    // Draw start/end
+    NSArray *startEnd = [[NSArray alloc] initWithObjects:[[route.route objectAtIndex:0] objectAtIndex:0], [[route.route lastObject] lastObject], nil];
+    for (NSArray *position in startEnd) {
+        GMSMarker *marker = [[GMSMarker alloc] init];
+        marker.position = CLLocationCoordinate2DMake([[position objectAtIndex:0] doubleValue], [[position objectAtIndex:1] doubleValue]);
+        marker.map = self.mapView;
+    }
+    
+    // Update map zoom
+    [self.mapView moveCamera:[GMSCameraUpdate fitBounds:bounds]];
+    
+    // Prepare table view
+    [self setCandidates:route.candidates];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,10 +95,6 @@
 
 #pragma mark - Table view data source
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"What do you feel like today?";
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -62,11 +104,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CandidateCell"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"CandidateCell"];
-    }
-
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CandidateCell" forIndexPath:indexPath];
     Candidate *candidate = [[self.items objectAtIndex:[indexPath row]] firstObject];
     cell.textLabel.text = candidate.name;
     cell.detailTextLabel.text = candidate.distance;

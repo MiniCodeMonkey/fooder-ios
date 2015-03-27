@@ -3,18 +3,13 @@
 //  fooder
 //
 //  Created by Mathias Hansen on 3/18/15.
-//  Copyright (c) 2015 engage. All rights reserved.
+//  Copyright (c) 2015 Mathias Hansen. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
-#import "Directions.h"
-#import "CandidatesTableViewController.h"
 
-@interface MainViewController : UIViewController <UITextFieldDelegate> {
-    Route *routeResponse;
-    CandidatesTableViewController *candidatesTableViewController;
-}
+@interface MainViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextField *destinationTextField;
