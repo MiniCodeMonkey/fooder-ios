@@ -26,6 +26,30 @@
     self.mapView.myLocationEnabled = YES;
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    
+    NSDictionary *credentials = [NSDictionary dictionaryWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"Credentials" ofType:@"plist"]];
+    NSDictionary *uberCredentials = [credentials objectForKey:@"Uber"];
+    
+    uberKit = [[UberKit alloc] initWithClientID:[uberCredentials objectForKey:@"ClientId"] ClientSecret:[uberCredentials objectForKey:@"ClientSecret"] RedirectURL:[uberCredentials objectForKey:@"RedirectUrl"] ApplicationName:[uberCredentials objectForKey:@"ApplicationName"]];
+    uberKit.delegate = self;
+    NSString *token = [[UberKit sharedInstance] getStoredAuthToken];
+    
+    if (!token) {
+        [uberKit startLogin];
+    }
+}
+
+- (void) uberKit: (UberKit *) uberKit didReceiveAccessToken: (NSString *) accessToken {
+    NSLog(@"Received access token %@", accessToken);
+}
+
+- (void) uberKit: (UberKit *) uberKit loginFailedWithError: (NSError *) error {
+    NSLog(@"Error in login %@", error);
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

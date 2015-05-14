@@ -1,0 +1,6 @@
+framework module UberKit {
+  umbrella header "Pods-fooder-UberKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
